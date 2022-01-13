@@ -1,0 +1,43 @@
+<section>
+  <h3>Interpolação</h3>
+  <hr />
+  <p>{{ nome }}</p>
+  <p>Olá eu sou {{ nome }}.</p>
+  <p>Olá, eu sou {{ nome }} e tenho {{ idade }} anos.</p>
+</section>
+
+<section>
+  <h3>Property binding</h3>
+  <hr />
+  <img [src]="link" [alt]="alt" [height]="altura" />
+  <!-- <img src="{{ link }}" /> -->
+</section>
+
+<section>
+  <h3>Event binding</h3>
+  <hr />
+  <button (click)="alerta()">Alertar</button>
+</section>
+
+<section>
+  <h3>Two-way data binding</h3>
+  <hr />
+  <input type="text" [(ngModel)]="nomeCompleto" />
+  <p>{{ nomeCompleto }}</p>
+  <h4>Exemplo:</h4>
+  <input type="text" [(ngModel)]="estudante.nomeCompleto" />
+  <input type="text" [(ngModel)]="estudante.idade" />
+  <input type="text" [(ngModel)]="estudante.nota1" />
+  <input type="text" [(ngModel)]="estudante.nota2" />
+  <input type="text" [(ngModel)]="estudante.nota3" />
+  <p>{{ estudante | json }}</p>
+</section>
+
+<section>
+  <h3>Exercício</h3>
+  <p>
+    Crie uma propriedade idade do tipo number. Crie dois botões um para aumentar
+    a idade e outro para diminuir.
+  </p>
+  <hr />
+</section>

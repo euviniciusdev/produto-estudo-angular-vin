@@ -1,0 +1,58 @@
+<section>
+  <h2>Exercício Prático</h2>
+  <hr />
+  <ol>
+    <li>Crie um componente pacientes dentro de ExerciciosModule.</li>
+    <li>Adicionar rota para este componente.</li>
+    <li>Criar uma interface para Paciente.</li>
+    <li>Criar array de pacientes dentro do componente.</li>
+    <li>Mostrar na tela todos dentro de uma tabela.</li>
+    <li>
+      Extras
+      <ol>
+        <li>Adicione uma ação de deletar o paciente da tabela.</li>
+        <li>Faça um formulário para cadastrar os pacientes dentro do array.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <div>
+    <input type="text" name="nome" [(ngModel)]="nome" />
+  </div>
+  <div>
+    <input type="date" name="dataNascimento" [(ngModel)]="dataNascimento" />
+  </div>
+  <div>
+    <input type="text" name="cpf" [(ngModel)]="cpf" />
+  </div>
+  <div>
+    <input type="email" name="email" [(ngModel)]="email" />
+  </div>
+
+  <button (click)="criar()">Adicionar</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of pacientes; let id = index">
+        <td>{{ id + 1 }}</td>
+        <td>{{ paciente.nome }}</td>
+        <td>{{ paciente.dataNascimento | date: "dd/MM/yyyy" }}</td>
+        <td>{{ paciente.cpf }}</td>
+        <td>{{ paciente.email }}</td>
+        <td>
+          <button (click)="deletar(id)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
